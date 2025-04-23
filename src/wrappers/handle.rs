@@ -96,11 +96,11 @@ impl BcachefsHandle {
 
     /// Snapshot a subvolume for this bcachefs filesystem
     /// at the given path
-    pub fn snapshot_subvolume<P: AsRef<Path>>(
+    pub fn snapshot_subvolume<P1: AsRef<Path>, P2: AsRef<Path>>(
         &self,
         extra_flags: u32,
-        src: Option<P>,
-        dst: P,
+        src: Option<P1>,
+        dst: P2,
     ) -> Result<(), Errno> {
         let src = src.map(|src| path_to_cstr(src));
         let dst = path_to_cstr(dst);
