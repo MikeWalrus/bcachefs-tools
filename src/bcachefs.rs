@@ -1,7 +1,6 @@
 mod commands;
 mod key;
 mod logging;
-mod wrappers;
 
 use std::{
     ffi::{c_char, CString},

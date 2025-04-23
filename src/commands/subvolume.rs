@@ -4,7 +4,7 @@ use anyhow::{Context, Result};
 use bch_bindgen::c::BCH_SUBVOL_SNAPSHOT_RO;
 use clap::{Parser, Subcommand};
 
-use crate::wrappers::handle::BcachefsHandle;
+use bcachefs::wrappers::handle::BcachefsHandle;
 
 #[derive(Parser, Debug)]
 pub struct Cli {

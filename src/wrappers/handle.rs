@@ -9,14 +9,14 @@ use errno::Errno;
 
 /// A handle to a bcachefs filesystem
 /// This can be used to send [`libc::ioctl`] to the underlying filesystem.
-pub(crate) struct BcachefsHandle {
+pub struct BcachefsHandle {
     inner: bchfs_handle,
 }
 
 impl BcachefsHandle {
     /// Opens a bcachefs filesystem and returns its handle
     /// TODO(raitobezarius): how can this not be faillible?
-    pub(crate) unsafe fn open<P: AsRef<Path>>(path: P) -> Self {
+    pub unsafe fn open<P: AsRef<Path>>(path: P) -> Self {
         let path = path_to_cstr(path);
         Self {
             inner: bcache_fs_open(path.as_ptr()),

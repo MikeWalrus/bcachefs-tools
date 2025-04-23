@@ -9,6 +9,10 @@ authors = ["Yuxuan Shui <yshuiv7@gmail.com>", "Kayla Firestack <dev@kaylafire.me
 edition = "2021"
 rust-version = "1.77.0"
 
+[lib]
+name = "bcachefs"
+path = "src/lib.rs"
+
 [[bin]]
 name = "bcachefs"
 path = "src/bcachefs.rs"
