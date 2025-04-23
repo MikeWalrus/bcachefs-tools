@@ -1,5 +1,8 @@
+use std::env::var;
+
 fn main() {
-    println!("cargo:rustc-link-search=.");
+    let manifest_dir = var("CARGO_MANIFEST_DIR").unwrap();
+    println!("cargo:rustc-link-search={}", manifest_dir);
     println!("cargo:rerun-if-changed=libbcachefs.a");
     println!("cargo:rustc-link-lib=static:+whole-archive=bcachefs");
 
